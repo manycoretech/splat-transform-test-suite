@@ -1,0 +1,58 @@
+on: 
+  push:
+    branches:
+      - 'main'
+  workflow_dispatch:
+
+name: test
+
+env:
+  NODE_VERSION: 24
+
+jobs:
+  test-splat-transform-native:
+    if: github.ref == 'refs/heads/main'
+    name: test splat-transform native (${{ matrix.target }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - target: win32-x64-msvc
+            os: windows-2025-vs2026
+            shell: pwsh
+          - target: linux-x64-gnu
+            os: ubuntu-22.04
+            shell: bash
+          - target: linux-arm64-gnu
+            os: ubuntu-22.04-arm
+            shell: bash
+          - target: darwin-arm64
+            os: macos-26
+            shell: bash
+    defaults:
+      run:
+        shell: ${{ matrix.shell }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          lfs: true
+          submodules: recursive
+
+      - name: Setup node
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install workspace dependencies
+        run: |
+          corepack enable
+          corepack install
+          pnpm install
+
+      - name: Test
+        run: |
+          mkdir out
+          pnpm splat-transform lod:auto --ratio 0.3 ./data/bear.sog ./out/bear.spz
+          pnpm splat-transform lod:auto-chunk --type spz ./data/bear.sog ./out/bear

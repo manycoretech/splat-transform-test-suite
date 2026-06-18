@@ -1,4 +1,4 @@
-on: 
+on:
   push:
     branches:
       - 'main'
@@ -8,6 +8,7 @@ name: test
 
 env:
   NODE_VERSION: 24
+  XIAOZHEN_PLY_URL: ${{ secrets.XIAOZHEN_PLY }}
 
 jobs:
   test-splat-transform-native:
@@ -40,6 +41,26 @@ jobs:
           lfs: true
           submodules: recursive
 
+      - name: Download test data (Unix)
+        if: runner.os != 'Windows'
+        shell: bash
+        run: |
+          curl --fail --location --silent --show-error --retry 3 \
+            --output ./data/xiaozhen.ply \
+            "$XIAOZHEN_PLY_URL"
+          test -s ./data/xiaozhen.ply
+
+      - name: Download test data (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $ProgressPreference = 'SilentlyContinue'
+          Invoke-WebRequest -Uri $env:XIAOZHEN_PLY_URL -OutFile './data/xiaozhen.ply'
+          if ((Get-Item './data/xiaozhen.ply').Length -le 0) {
+            throw 'Downloaded xiaozhen.ply is empty.'
+          }
+
       - name: Setup node
         uses: actions/setup-node@v6
         with:
@@ -56,3 +77,5 @@ jobs:
           mkdir out
           pnpm splat-transform lod:auto --ratio 0.3 ./data/bear.sog ./out/bear.spz
           pnpm splat-transform lod:auto-chunk --type spz ./data/bear.sog ./out/bear
+          pnpm splat-transform lod:auto --ratio 0.3 ./data/xiaozhen.ply ./out/xiaozhen.spz
+          pnpm splat-transform lod:auto-chunk --type spz ./data/xiaozhen.ply ./out/xiaozhen

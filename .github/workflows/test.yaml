@@ -22,6 +22,9 @@ jobs:
           - target: win32-x64-msvc
             os: windows-2025-vs2026
             shell: pwsh
+          - target: win32-arm64-msvc
+            os: windows-11-vs2026-arm
+            shell: pwsh
           - target: linux-x64-gnu
             os: ubuntu-22.04
             shell: bash
@@ -39,7 +42,6 @@ jobs:
         uses: actions/checkout@v6
         with:
           lfs: true
-          submodules: recursive
 
       - name: Download test data (Unix)
         if: runner.os != 'Windows'

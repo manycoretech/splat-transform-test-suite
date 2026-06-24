@@ -12,6 +12,6 @@
   "packageManager": "pnpm@11.8.0",
   "type": "commonjs",
   "dependencies": {
-    "@manycore/aholo-splat-transform": "1.4.0"
+    "@manycore/aholo-splat-transform": "1.4.1"
   }
 }

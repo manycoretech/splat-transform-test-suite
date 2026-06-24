@@ -77,6 +77,7 @@ jobs:
       - name: Test
         run: |
           mkdir out
+          pnpm splat-transform list:gpu
           pnpm splat-transform lod:auto --ratio 0.3 ./data/bear.sog ./out/bear.spz
           pnpm splat-transform lod:auto-chunk --type spz ./data/bear.sog ./out/bear
           pnpm splat-transform lod:auto --ratio 0.3 ./data/xiaozhen.ply ./out/xiaozhen.spz

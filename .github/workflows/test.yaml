@@ -114,7 +114,6 @@ jobs:
         env:
           DATA_ARTIFACT_PASSWORD: ${{ needs.download-data.outputs.data_password }}
         run: |
-          echo "::add-mask::$DATA_ARTIFACT_PASSWORD"
           mkdir -p ./data
           node ci/data-artifact-crypto.cjs decrypt ./artifact/data.tar.gz.enc ./data.tar.gz
           tar -xzf ./data.tar.gz -C ./data
@@ -125,7 +124,6 @@ jobs:
         env:
           DATA_ARTIFACT_PASSWORD: ${{ needs.download-data.outputs.data_password }}
         run: |
-          Write-Output "::add-mask::$env:DATA_ARTIFACT_PASSWORD"
           New-Item -ItemType Directory -Force -Path ./data | Out-Null
           node ci/data-artifact-crypto.cjs decrypt ./artifact/data.tar.gz.enc ./data.tar.gz
           tar -xzf ./data.tar.gz -C ./data

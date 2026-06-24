@@ -40,6 +40,7 @@ jobs:
         shell: bash
         run: |
           password="$(node -e 'process.stdout.write(require("crypto").randomBytes(32).toString("base64url"))')"
+          echo "::add-mask::$password"
           echo "data_password=$password" >> "$GITHUB_OUTPUT"
 
       - name: Encrypt data artifact

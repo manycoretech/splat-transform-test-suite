@@ -11,9 +11,32 @@ env:
   XIAOZHEN_PLY_URL: ${{ secrets.XIAOZHEN_PLY }}
 
 jobs:
+  download-data:
+    if: github.ref == 'refs/heads/main'
+    name: download data
+    runs-on: ubuntu-26.04
+    steps:
+      - name: Download data
+        shell: bash
+        run: |
+          mkdir -p ./data
+          curl --fail --location --silent --show-error --retry 3 --output ./data/xiaozhen.ply "$XIAOZHEN_PLY_URL"
+          curl --fail --location --silent --show-error --retry 3 --output ./data/bear.sog https://holo-cos.aholo3d.cn/aholo-opensource/gs_file/bear/bear.3d71a266.sog
+          test -s ./data/xiaozhen.ply
+          test -s ./data/bear.sog
+
+      - name: Upload data artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: data
+          path: ./data
+          if-no-files-found: error
+          retention-days: 1
+
   test-splat-transform-native:
     if: github.ref == 'refs/heads/main'
     name: test splat-transform native (${{ matrix.target }})
+    needs: download-data
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -39,18 +62,7 @@ jobs:
         shell: ${{ matrix.shell }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
-        with:
-          lfs: true
-
-      - name: Setup (Macos)
-        if: runner.os == 'macOS'
-        shell: bash
-        run: |
-          curl --fail --location --silent --show-error --retry 3 \
-            --output ./data/xiaozhen.ply \
-            "$XIAOZHEN_PLY_URL"
-          test -s ./data/xiaozhen.ply
+        uses: actions/checkout@v7
 
       - name: Setup (Linux)
         if: runner.os == 'Linux'
@@ -58,21 +70,29 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y libvulkan1 vulkan-tools mesa-vulkan-drivers
-          curl --fail --location --silent --show-error --retry 3 \
-            --output ./data/xiaozhen.ply \
-            "$XIAOZHEN_PLY_URL"
-          test -s ./data/xiaozhen.ply
-          
 
-      - name: Setup (Windows)
+      - name: Download data artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: data
+          path: ./data
+
+      - name: Verify data artifact (Unix)
+        if: runner.os != 'Windows'
+        shell: bash
+        run: |
+          test -s ./data/xiaozhen.ply
+          test -s ./data/bear.sog
+
+      - name: Verify data artifact (Windows)
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          $ErrorActionPreference = 'Stop'
-          $ProgressPreference = 'SilentlyContinue'
-          Invoke-WebRequest -Uri $env:XIAOZHEN_PLY_URL -OutFile './data/xiaozhen.ply'
           if ((Get-Item './data/xiaozhen.ply').Length -le 0) {
-            throw 'Downloaded xiaozhen.ply is empty.'
+            throw 'xiaozhen.ply artifact is empty.'
+          }
+          if ((Get-Item './data/bear.sog').Length -le 0) {
+            throw 'bear.sog artifact is empty.'
           }
 
       - name: Setup node

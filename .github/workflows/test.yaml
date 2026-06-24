@@ -43,8 +43,8 @@ jobs:
         with:
           lfs: true
 
-      - name: Download test data (Unix)
-        if: runner.os != 'Windows'
+      - name: Setup (Macos)
+        if: runner.os == 'macOS'
         shell: bash
         run: |
           curl --fail --location --silent --show-error --retry 3 \
@@ -52,7 +52,19 @@ jobs:
             "$XIAOZHEN_PLY_URL"
           test -s ./data/xiaozhen.ply
 
-      - name: Download test data (Windows)
+      - name: Setup (Linux)
+        if: runner.os == 'Linux'
+        shell: bash
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libvulkan1 vulkan-tools mesa-vulkan-drivers
+          curl --fail --location --silent --show-error --retry 3 \
+            --output ./data/xiaozhen.ply \
+            "$XIAOZHEN_PLY_URL"
+          test -s ./data/xiaozhen.ply
+          
+
+      - name: Setup (Windows)
         if: runner.os == 'Windows'
         shell: pwsh
         run: |

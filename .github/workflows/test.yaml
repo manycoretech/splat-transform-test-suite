@@ -15,7 +15,17 @@ jobs:
     if: github.ref == 'refs/heads/main'
     name: download data
     runs-on: ubuntu-26.04
+    outputs:
+      data_password: ${{ steps.generate-password.outputs.data_password }}
     steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup node
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
       - name: Download data
         shell: bash
         run: |
@@ -25,11 +35,26 @@ jobs:
           test -s ./data/xiaozhen.ply
           test -s ./data/bear.sog
 
+      - name: Generate data artifact password
+        id: generate-password
+        shell: bash
+        run: |
+          password="$(node -e 'process.stdout.write(require("crypto").randomBytes(32).toString("base64url"))')"
+          echo "data_password=$password" >> "$GITHUB_OUTPUT"
+
+      - name: Encrypt data artifact
+        shell: bash
+        env:
+          DATA_ARTIFACT_PASSWORD: ${{ steps.generate-password.outputs.data_password }}
+        run: |
+          tar -czf ./data.tar.gz -C ./data .
+          node ci/data-artifact-crypto.cjs encrypt ./data.tar.gz ./data.tar.gz.enc
+
       - name: Upload data artifact
         uses: actions/upload-artifact@v4
         with:
           name: data
-          path: ./data
+          path: ./data.tar.gz.enc
           if-no-files-found: error
           retention-days: 1
 
@@ -71,11 +96,38 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libvulkan1 vulkan-tools mesa-vulkan-drivers
 
-      - name: Download data artifact
+      - name: Setup node
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Download encrypted data artifact
         uses: actions/download-artifact@v4
         with:
           name: data
-          path: ./data
+          path: ./artifact
+
+      - name: Decrypt data artifact (Unix)
+        if: runner.os != 'Windows'
+        shell: bash
+        env:
+          DATA_ARTIFACT_PASSWORD: ${{ needs.download-data.outputs.data_password }}
+        run: |
+          echo "::add-mask::$DATA_ARTIFACT_PASSWORD"
+          mkdir -p ./data
+          node ci/data-artifact-crypto.cjs decrypt ./artifact/data.tar.gz.enc ./data.tar.gz
+          tar -xzf ./data.tar.gz -C ./data
+
+      - name: Decrypt data artifact (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        env:
+          DATA_ARTIFACT_PASSWORD: ${{ needs.download-data.outputs.data_password }}
+        run: |
+          Write-Output "::add-mask::$env:DATA_ARTIFACT_PASSWORD"
+          New-Item -ItemType Directory -Force -Path ./data | Out-Null
+          node ci/data-artifact-crypto.cjs decrypt ./artifact/data.tar.gz.enc ./data.tar.gz
+          tar -xzf ./data.tar.gz -C ./data
 
       - name: Verify data artifact (Unix)
         if: runner.os != 'Windows'
@@ -94,11 +146,6 @@ jobs:
           if ((Get-Item './data/bear.sog').Length -le 0) {
             throw 'bear.sog artifact is empty.'
           }
-
-      - name: Setup node
-        uses: actions/setup-node@v6
-        with:
-          node-version: ${{ env.NODE_VERSION }}
 
       - name: Install workspace dependencies
         run: |

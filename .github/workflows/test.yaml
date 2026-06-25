@@ -14,6 +14,9 @@ env:
 jobs:
   download-data:
     if: github.ref == 'refs/heads/main'
+    environment:
+      name: test
+      deployment: false
     name: download data
     runs-on: ubuntu-26.04
     steps:
@@ -50,6 +53,9 @@ jobs:
 
   test-splat-transform-native:
     if: github.ref == 'refs/heads/main'
+    environment:
+      name: test
+      deployment: false
     name: test splat-transform native (${{ matrix.target }})
     needs: download-data
     runs-on: ${{ matrix.os }}

@@ -9,40 +9,40 @@ importers:
   .:
     dependencies:
       '@manycore/aholo-splat-transform':
-        specifier: 1.6.0
-        version: 1.6.0
+        specifier: 1.6.1
+        version: 1.6.1
 
 packages:
 
-  '@manycore/aholo-splat-transform-darwin-arm64@1.6.0':
-    resolution: {integrity: sha512-61td414/mZwSoPRsTKnz5TiDArdxZQf0UXJUAUpmY6VkzKtOgupDdsOLhqdGTLKYBqLUS8/fuT1IYXlmsPsCCA==}
+  '@manycore/aholo-splat-transform-darwin-arm64@1.6.1':
+    resolution: {integrity: sha512-JPK+RLijDmhh7Mk6I21eOsmZjsSrmQY3KuPwLzFyCzUnVkoJ5FofaAUwD54mkBe08S3602TqzYgJ0b0uBZ1CcQ==}
     cpu: [arm64]
     os: [darwin]
 
-  '@manycore/aholo-splat-transform-linux-arm64-gnu@1.6.0':
-    resolution: {integrity: sha512-n9T3vsiHWXruucWKSLtsjI7oEizlMw4hKsA1VOaWI3yoGQF6xEGwrmpcGpQZcQAK2SB6Uo3Y+afWetlYTzmScA==}
+  '@manycore/aholo-splat-transform-linux-arm64-gnu@1.6.1':
+    resolution: {integrity: sha512-h4+Pg6e3BX5NDlrWASxJds34cjiBFSKYmY4UQEZe6SwmC2Cdahv4dS8wxF9qd3NHti45fk0Xg0+52TJKGtzwsg==}
     cpu: [arm64]
     os: [linux]
     libc: [glibc]
 
-  '@manycore/aholo-splat-transform-linux-x64-gnu@1.6.0':
-    resolution: {integrity: sha512-Cb5wGyjJhRd/1lREenl4nyGMGgMFx98oCTDBgDWBWIAZv5L+UBpLP7D1FjfUy5t59+uIcpTBAmgx/9QbKCDchQ==}
+  '@manycore/aholo-splat-transform-linux-x64-gnu@1.6.1':
+    resolution: {integrity: sha512-6tvFYSN58eIWTvNJSurw9l22vevtyL462LCuUrf+mR2tPAHwLUryUWbgOJuW5VeaZ/WU2m4JgUcNVlFkT5iWMA==}
     cpu: [x64]
     os: [linux]
     libc: [glibc]
 
-  '@manycore/aholo-splat-transform-win32-arm64-msvc@1.6.0':
-    resolution: {integrity: sha512-7cpJnsfHvB2vMtGsXAKRRm8PvJomLMCAsB4XhKs6IRrs3egzFp+r+zPqSmuEZ06r7vfT2nou08SASx9k7rCmbw==}
+  '@manycore/aholo-splat-transform-win32-arm64-msvc@1.6.1':
+    resolution: {integrity: sha512-71KBGs613UTuJIngwsxdfbyqUtinZK/Tfglz2AMRaSPzDU4J/m54tIu9zkGNIbkLRy+m/AWEJUUSAxPM4+cRMw==}
     cpu: [arm64]
     os: [win32]
 
-  '@manycore/aholo-splat-transform-win32-x64-msvc@1.6.0':
-    resolution: {integrity: sha512-svGql9V6os1ro6/SmFm2xkocBcuWJ/F6qIqLCP92UzOL4QiF7Wx3fVl1b6is0m7iRfceIr6RfrHt/KtTx8dsRQ==}
+  '@manycore/aholo-splat-transform-win32-x64-msvc@1.6.1':
+    resolution: {integrity: sha512-NVOJx08aKq2uCqZLxnMc2HQedpA6RPhpDueejIiWpDz+/Phgg2XzBbEdmNmaUEx9auyCHFeDLuo7w8YAESkQKw==}
     cpu: [x64]
     os: [win32]
 
-  '@manycore/aholo-splat-transform@1.6.0':
-    resolution: {integrity: sha512-3RyPBlt8nZ+tyuDcCFtUekaKZi3MERlUwqKI5dQH7rLWqfs5kd1XX/pEAZGN9o52aC49SZcQAPoAut2J+spdpA==}
+  '@manycore/aholo-splat-transform@1.6.1':
+    resolution: {integrity: sha512-QCeX3FEoDOFwhgKeB6jKMuac575VSGOg1awbExKrfe90F1YdONKT7caEMOD8QNGuUUIdvYtf0HJGwnffS0lj1Q==}
     engines: {node: '>= 22.22.1'}
     hasBin: true
 
@@ -58,32 +58,32 @@ packages:
 
 snapshots:
 
-  '@manycore/aholo-splat-transform-darwin-arm64@1.6.0':
+  '@manycore/aholo-splat-transform-darwin-arm64@1.6.1':
     optional: true
 
-  '@manycore/aholo-splat-transform-linux-arm64-gnu@1.6.0':
+  '@manycore/aholo-splat-transform-linux-arm64-gnu@1.6.1':
     optional: true
 
-  '@manycore/aholo-splat-transform-linux-x64-gnu@1.6.0':
+  '@manycore/aholo-splat-transform-linux-x64-gnu@1.6.1':
     optional: true
 
-  '@manycore/aholo-splat-transform-win32-arm64-msvc@1.6.0':
+  '@manycore/aholo-splat-transform-win32-arm64-msvc@1.6.1':
     optional: true
 
-  '@manycore/aholo-splat-transform-win32-x64-msvc@1.6.0':
+  '@manycore/aholo-splat-transform-win32-x64-msvc@1.6.1':
     optional: true
 
-  '@manycore/aholo-splat-transform@1.6.0':
+  '@manycore/aholo-splat-transform@1.6.1':
     dependencies:
       commander: 15.0.0
       fflate: 0.8.3
       tslib: 2.8.1
     optionalDependencies:
-      '@manycore/aholo-splat-transform-darwin-arm64': 1.6.0
-      '@manycore/aholo-splat-transform-linux-arm64-gnu': 1.6.0
-      '@manycore/aholo-splat-transform-linux-x64-gnu': 1.6.0
-      '@manycore/aholo-splat-transform-win32-arm64-msvc': 1.6.0
-      '@manycore/aholo-splat-transform-win32-x64-msvc': 1.6.0
+      '@manycore/aholo-splat-transform-darwin-arm64': 1.6.1
+      '@manycore/aholo-splat-transform-linux-arm64-gnu': 1.6.1
+      '@manycore/aholo-splat-transform-linux-x64-gnu': 1.6.1
+      '@manycore/aholo-splat-transform-win32-arm64-msvc': 1.6.1
+      '@manycore/aholo-splat-transform-win32-x64-msvc': 1.6.1
 
   commander@15.0.0: {}
 

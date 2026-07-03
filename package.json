@@ -9,9 +9,9 @@
   },
   "license": "ISC",
   "author": "",
-  "packageManager": "pnpm@11.8.0",
+  "packageManager": "pnpm@11.9.0",
   "type": "commonjs",
   "dependencies": {
-    "@manycore/aholo-splat-transform": "1.6.0"
+    "@manycore/aholo-splat-transform": "1.6.1"
   }
 }

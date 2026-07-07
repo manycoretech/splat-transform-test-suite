@@ -146,8 +146,14 @@ jobs:
       - name: Test
         run: |
           mkdir out
+          mkdir out/logs
           pnpm splat-transform list:gpu
-          pnpm splat-transform lod:auto --ratio 0.3 ./data/bear.sog ./out/bear.spz
-          pnpm splat-transform lod:auto-chunk --type spz ./data/bear.sog ./out/bear
-          pnpm splat-transform lod:auto --ratio 0.3 ./data/xiaozhen.ply ./out/xiaozhen.spz
-          pnpm splat-transform lod:auto-chunk --type spz ./data/xiaozhen.ply ./out/xiaozhen
+          pnpm splat-transform lod:auto --ratio 0.3 ./data/bear.sog ./out/bear.spz > ./out/logs/bear-auto.log 2>&1
+          cat ./out/logs/bear-auto.log
+          pnpm splat-transform lod:auto-chunk --type spz ./data/bear.sog ./out/bear > ./out/logs/bear-auto-chunk.log 2>&1
+          cat ./out/logs/bear-auto-chunk.log
+          pnpm splat-transform lod:auto --ratio 0.3 ./data/xiaozhen.ply ./out/xiaozhen.spz > ./out/logs/xiaozhen-auto.log 2>&1
+          cat ./out/logs/xiaozhen-auto.log
+          pnpm splat-transform lod:auto-chunk --type spz ./data/xiaozhen.ply ./out/xiaozhen > ./out/logs/xiaozhen-auto-chunk.log 2>&1
+          cat ./out/logs/xiaozhen-auto-chunk.log
+          pnpm verify

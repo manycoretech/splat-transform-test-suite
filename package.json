@@ -11,6 +11,9 @@
   "author": "",
   "packageManager": "pnpm@11.9.0",
   "type": "commonjs",
+  "scripts": {
+    "verify": "node ci/verify-splat-transform-outputs.cjs"
+  },
   "dependencies": {
     "@manycore/aholo-splat-transform": "1.6.2"
   }

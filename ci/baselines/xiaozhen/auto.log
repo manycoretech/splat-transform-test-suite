@@ -1,15 +1,14 @@
-[WARN] Issue while reading "C:\Users\daodao\AppData\Local\pnpm\config\auth.ini". EPERM: operation not permitted, open 'C:\Users\daodao\AppData\Local\pnpm\config\auth.ini'
 [Task:Read#0] load: 1 files | sizes=900.11MB
 [Task:Read#0]   - ./data/xiaozhen.ply
 [Task:Read#0] counts: 3999275, SH: 3
 [Task:Read#0] stored -> "cache0"
-[Task:Read#0] elapsed time: 1.660s
+[Task:Read#0] elapsed time: 1.313s
 [Task:AutoLod#1] loaded -> "cache0"
 [Task:AutoLod#1] expected -> 1199783(30.00%) | ratio=0.3 counts=Infinity
-[Task:AutoLod#1] result -> 1202815(100.25%)
+[Task:AutoLod#1] result -> 1200099(100.03%)
 [Task:AutoLod#1] stored -> key="cache0"
-[Task:AutoLod#1] elapsed time: 17.811s
-[Task:Write#2] writing splat -> file="./out/xiaozhen.spz" count=1202815 SH=3
+[Task:AutoLod#1] elapsed time: 12.723s
+[Task:Write#2] writing splat -> file="./out/xiaozhen.spz" count=1200099 SH=3
 [Task:Write#2] writing done
-[Task:Write#2] elapsed time: 5.020s
-Total elapsed time: 24.492s
+[Task:Write#2] elapsed time: 3.408s
+Total elapsed time: 17.445s

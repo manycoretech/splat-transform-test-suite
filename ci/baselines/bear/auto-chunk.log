@@ -1,49 +1,36 @@
-[WARN] Issue while reading "C:\Users\daodao\AppData\Local\pnpm\config\auth.ini". EPERM: operation not permitted, open 'C:\Users\daodao\AppData\Local\pnpm\config\auth.ini'
 [Task:Read#0] load: 1 files | sizes=15.77MB
 [Task:Read#0]   - ./data/bear.sog
 [Task:Read#0] counts: 970948, SH: 3
 [Task:Read#0] stored -> "cache0"
-[Task:Read#0] elapsed time: 314.71ms
+[Task:Read#0] elapsed time: 318.24ms
 [Task:AutoChunkLod#1] loaded -> "cache0"
 [Task:AutoChunkLod#1] generate lod
-[Task:AutoChunkLod#1] generate elapsed: 7.454s
-[Task:AutoChunkLod#1] Total blocks: 8, files: 26
+[Task:AutoChunkLod#1] generate elapsed: 5.808s
+[Task:AutoChunkLod#1] Total blocks: 4, files: 14
 [Task:AutoChunkLod#1] Gaussian per level: 
 [Task:AutoChunkLod#1] 	Level 0(100.00%): 970948(100.00%)
-[Task:AutoChunkLod#1] 	Level 1 (50.00%): 485460 (50.00%)
-[Task:AutoChunkLod#1] 	Level 2 (25.00%): 242734 (25.00%)
-[Task:AutoChunkLod#1] 	Level 3  (5.00%):  48545  (5.00%)
-[Task:AutoChunkLod#1] 	Level 4  (1.00%):  11427  (1.18%)
-[Task:AutoChunkLod#1] elapsed time: 7.522s
+[Task:AutoChunkLod#1] 	Level 1 (50.00%): 485472 (50.00%)
+[Task:AutoChunkLod#1] 	Level 2 (25.00%): 242736 (25.00%)
+[Task:AutoChunkLod#1] 	Level 3  (5.00%):  48546  (5.00%)
+[Task:AutoChunkLod#1] 	Level 4  (1.00%):   9707  (1.00%)
+[Task:AutoChunkLod#1] elapsed time: 5.848s
 [Task:Write#2] exist dir ./out/bear, removed
-[Task:Write#2] writing bundle -> dir="./out/bear" files=27
-[Task:Write#2] - out\bear\lod-meta.json (1/27)
-[Task:Write#2] - out\bear\chunk_0.spz (2/27)
-[Task:Write#2] - out\bear\chunk_1.spz (3/27)
-[Task:Write#2] - out\bear\chunk_2.spz (4/27)
-[Task:Write#2] - out\bear\chunk_3.spz (5/27)
-[Task:Write#2] - out\bear\chunk_4.spz (6/27)
-[Task:Write#2] - out\bear\chunk_5.spz (7/27)
-[Task:Write#2] - out\bear\chunk_6.spz (8/27)
-[Task:Write#2] - out\bear\chunk_7.spz (9/27)
-[Task:Write#2] - out\bear\chunk_8.spz (10/27)
-[Task:Write#2] - out\bear\chunk_9.spz (11/27)
-[Task:Write#2] - out\bear\chunk_10.spz (12/27)
-[Task:Write#2] - out\bear\chunk_11.spz (13/27)
-[Task:Write#2] - out\bear\chunk_12.spz (14/27)
-[Task:Write#2] - out\bear\chunk_13.spz (15/27)
-[Task:Write#2] - out\bear\chunk_14.spz (16/27)
-[Task:Write#2] - out\bear\chunk_15.spz (17/27)
-[Task:Write#2] - out\bear\chunk_16.spz (18/27)
-[Task:Write#2] - out\bear\chunk_17.spz (19/27)
-[Task:Write#2] - out\bear\chunk_18.spz (20/27)
-[Task:Write#2] - out\bear\chunk_19.spz (21/27)
-[Task:Write#2] - out\bear\chunk_20.spz (22/27)
-[Task:Write#2] - out\bear\chunk_21.spz (23/27)
-[Task:Write#2] - out\bear\chunk_22.spz (24/27)
-[Task:Write#2] - out\bear\chunk_23.spz (25/27)
-[Task:Write#2] - out\bear\chunk_24.spz (26/27)
-[Task:Write#2] - out\bear\chunk_25.spz (27/27)
-[Task:Write#2] writing bundle done -> dir="./out/bear" files=27
-[Task:Write#2] elapsed time: 3.686s
-Total elapsed time: 11.523s
+[Task:Write#2] writing bundle -> dir="./out/bear" files=15
+[Task:Write#2] - out\bear\lod-meta.json (1/15)
+[Task:Write#2] - out\bear\chunk_0.spz (2/15)
+[Task:Write#2] - out\bear\chunk_1.spz (3/15)
+[Task:Write#2] - out\bear\chunk_2.spz (4/15)
+[Task:Write#2] - out\bear\chunk_3.spz (5/15)
+[Task:Write#2] - out\bear\chunk_4.spz (6/15)
+[Task:Write#2] - out\bear\chunk_5.spz (7/15)
+[Task:Write#2] - out\bear\chunk_6.spz (8/15)
+[Task:Write#2] - out\bear\chunk_7.spz (9/15)
+[Task:Write#2] - out\bear\chunk_8.spz (10/15)
+[Task:Write#2] - out\bear\chunk_9.spz (11/15)
+[Task:Write#2] - out\bear\chunk_10.spz (12/15)
+[Task:Write#2] - out\bear\chunk_11.spz (13/15)
+[Task:Write#2] - out\bear\chunk_12.spz (14/15)
+[Task:Write#2] - out\bear\chunk_13.spz (15/15)
+[Task:Write#2] writing bundle done -> dir="./out/bear" files=15
+[Task:Write#2] elapsed time: 1.107s
+Total elapsed time: 7.274s

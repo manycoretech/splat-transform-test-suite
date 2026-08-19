@@ -70,10 +70,10 @@ jobs:
             os: windows-11-vs2026-arm
             shell: pwsh
           - target: linux-x64-gnu
-            os: ubuntu-22.04
+            os: ubuntu-26.04
             shell: bash
           - target: linux-arm64-gnu
-            os: ubuntu-22.04-arm
+            os: ubuntu-26.04-arm
             shell: bash
           - target: darwin-arm64
             os: macos-26

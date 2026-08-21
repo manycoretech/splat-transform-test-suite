@@ -8,6 +8,7 @@ name: test
 
 env:
   NODE_VERSION: 24
+  LINUX_TEST_IMAGE: ghcr.io/manycoretech/aholo-viewer/aholo-native-linux:latest
   XIAOZHEN_PLY_URL: ${{ secrets.XIAOZHEN_PLY }}
   DATA_ARTIFACT_PASSWORD: ${{ secrets.DATA_ARTIFACT_PASSWORD }}
 
@@ -58,6 +59,9 @@ jobs:
       deployment: false
     name: test splat-transform native (${{ matrix.target }})
     needs: download-data
+    permissions:
+      contents: read
+      packages: read
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -85,12 +89,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      - name: Setup (Linux)
+      - name: Login to GitHub Container Registry
         if: runner.os == 'Linux'
-        shell: bash
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libvulkan1 vulkan-tools mesa-vulkan-drivers
+        uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup node
         uses: actions/setup-node@v6
@@ -137,14 +142,12 @@ jobs:
             throw 'bear.sog artifact is empty.'
           }
 
-      - name: Install workspace dependencies
+      - name: Test
+        if: runner.os != 'Linux'
         run: |
           corepack enable
           corepack install
           pnpm install
-
-      - name: Test
-        run: |
           mkdir out
           mkdir out/logs
           pnpm splat-transform list:gpu
@@ -157,3 +160,33 @@ jobs:
           pnpm splat-transform lod:auto-chunk --type spz ./data/xiaozhen.ply ./out/xiaozhen > ./out/logs/xiaozhen-auto-chunk.log 2>&1
           cat ./out/logs/xiaozhen-auto-chunk.log
           pnpm verify
+
+      - name: Test (Linux container)
+        if: runner.os == 'Linux'
+        shell: bash
+        run: |
+          docker run --rm \
+            --volume "${GITHUB_WORKSPACE}:/work" \
+            --workdir /work \
+            --env CI \
+            "$LINUX_TEST_IMAGE" \
+            bash -lc '
+              set -euo pipefail
+              apt-get update
+              apt-get install -y --no-install-recommends libvulkan1 vulkan-tools mesa-vulkan-drivers
+              rm -rf /var/lib/apt/lists/*
+              corepack enable
+              corepack install
+              pnpm install
+              mkdir -p ./out/logs
+              pnpm splat-transform list:gpu
+              pnpm splat-transform lod:auto --ratio 0.3 ./data/bear.sog ./out/bear.spz > ./out/logs/bear-auto.log 2>&1
+              cat ./out/logs/bear-auto.log
+              pnpm splat-transform lod:auto-chunk --type spz ./data/bear.sog ./out/bear > ./out/logs/bear-auto-chunk.log 2>&1
+              cat ./out/logs/bear-auto-chunk.log
+              pnpm splat-transform lod:auto --ratio 0.3 ./data/xiaozhen.ply ./out/xiaozhen.spz > ./out/logs/xiaozhen-auto.log 2>&1
+              cat ./out/logs/xiaozhen-auto.log
+              pnpm splat-transform lod:auto-chunk --type spz ./data/xiaozhen.ply ./out/xiaozhen > ./out/logs/xiaozhen-auto-chunk.log 2>&1
+              cat ./out/logs/xiaozhen-auto-chunk.log
+              pnpm verify
+            '

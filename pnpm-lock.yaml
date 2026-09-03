@@ -9,45 +9,45 @@ importers:
   .:
     dependencies:
       '@manycore/aholo-splat-transform':
-        specifier: 1.7.4
-        version: 1.7.4
+        specifier: 1.7.5
+        version: 1.7.5
 
 packages:
 
-  '@manycore/aholo-splat-transform-darwin-arm64@1.7.4':
-    resolution: {integrity: sha512-tuKcPXiXRfANLm1f83c++vYUu4Iq/0Hh/ugHvkSkSW09OlrokWAnPVbuI7vtzjkGazimAkyDAlTngm73SeRsFg==}
+  '@manycore/aholo-splat-transform-darwin-arm64@1.7.5':
+    resolution: {integrity: sha512-fs2dLX2RW0hwCVd4hN3Y1CUceWTyq1CKsXZzX6uVC4a/Vi/WeRykVn4yfRCucuZjJakVR9F+up2e94X2Nj5eAw==}
     cpu: [arm64]
     os: [darwin]
 
-  '@manycore/aholo-splat-transform-linux-arm64-gnu@1.7.4':
-    resolution: {integrity: sha512-9phlCbOoHkuAW1y1I8dx3bwa0WQd8QxVuWZVvcGjt0QKzG/ZeRzqBldC/b1dMen7tEfaFEnUdfm+EpNagB/hDA==}
+  '@manycore/aholo-splat-transform-linux-arm64-gnu@1.7.5':
+    resolution: {integrity: sha512-rQTfrqmEqRdLT4m2TBxQ4idxa7VsyxmrnHDeah0FsRqSQGxLK/yd6JT+bXaPlkacrI3162R/ns1DXzBqlKXpJA==}
     cpu: [arm64]
     os: [linux]
     libc: [glibc]
 
-  '@manycore/aholo-splat-transform-linux-x64-gnu@1.7.4':
-    resolution: {integrity: sha512-fC9qz/svzHCnkIDlhGgLlOLIrLWvGBI5F80f6SYPlnT8zggQpf4I6iVcJusC8oUM+GZ7qHBxMXg+mhU4Lur4bQ==}
+  '@manycore/aholo-splat-transform-linux-x64-gnu@1.7.5':
+    resolution: {integrity: sha512-HjPGd98q7XP7VMKcNDvHjA81oYSkENxx/B254YDyxpq5PzEzpxshvpR4UIQnjfIPxS2vxLx92ZU0Bg37kAnZnQ==}
     cpu: [x64]
     os: [linux]
     libc: [glibc]
 
-  '@manycore/aholo-splat-transform-win32-arm64-msvc@1.7.4':
-    resolution: {integrity: sha512-XR+hKR0OmLsNrvNz0SbJWHmHqxqt2K9bEKE4X6Nguo2e5P6pZyn+UPRVBAY6DjYeZr3p+nXzTnpGmCc8z88fyg==}
+  '@manycore/aholo-splat-transform-win32-arm64-msvc@1.7.5':
+    resolution: {integrity: sha512-CzK3zKKj6gQc3aED6egdSuGRWHAxj0pM2IptgkC7xl8lmZBAEUj7Ws8y6sp6mEdZ23TwpmL4YJcwoX7tI4tXGA==}
     cpu: [arm64]
     os: [win32]
 
-  '@manycore/aholo-splat-transform-win32-x64-msvc@1.7.4':
-    resolution: {integrity: sha512-mp+174E00KqqBRzQ6hWy8yQEbqYMxr8zOyWc70v6aB+2w+XVGVKq8bvj3xHqYgC6q2fIj7GmvleZSYSQat8RqA==}
+  '@manycore/aholo-splat-transform-win32-x64-msvc@1.7.5':
+    resolution: {integrity: sha512-VHjyABtNIy3s9TlflYMe1BfylxTzUTHZDqfQXVUWusyh/S32RsN56mOT1WBWZzoyQHu7D/KXH7xSW8seUQ6I3g==}
     cpu: [x64]
     os: [win32]
 
-  '@manycore/aholo-splat-transform@1.7.4':
-    resolution: {integrity: sha512-CdoIyAM9PHVui6A+WiVUqL+qZDTgo3WpBBKQ4GAd5/vBP6wq6SzW81cEugrAUC2N1TJBRtLukY75XQy6p/bD4g==}
+  '@manycore/aholo-splat-transform@1.7.5':
+    resolution: {integrity: sha512-sjIjgPCaxRcGeQSRLJDFAEeuPJLaeif6n1h/CWKpjxBpxg7uOPpaBlyja5/ySE6X0TVm0AKlSc6Za6vtCD1WkQ==}
     engines: {node: '>= 22.22.1'}
     hasBin: true
 
-  ansi-regex@6.2.2:
-    resolution: {integrity: sha512-Bq3SmSpyFHaWjPk8If9yc6svM8c56dB5BAtW4Qbw5jHTwwXXcTLoRMkpDJp6VL0XzlWaCHTXrkFURMYmD0sLqg==}
+  ansi-regex@6.3.0:
+    resolution: {integrity: sha512-WpDfL7NO6j7tH88IDBNVdUJxDh9nmCteAVW9dsep846XdwF4naCBK+/tGLX3KJgcpgMRXCFlTM2hKGoK9FsdrQ==}
     engines: {node: '>=12'}
 
   ansi-styles@6.2.3:
@@ -80,6 +80,10 @@ packages:
     resolution: {integrity: sha512-tsaTIkKW9b4N+AEj+SVA+WhJzV7/zMhcSu78mLKWSk7cXMOSHsBKFWUs0fWwq8QyK3MgJBQRX6Gbi4kYbdvGkQ==}
     engines: {node: '>=18'}
 
+  string-width@8.2.2:
+    resolution: {integrity: sha512-GaPUh5gfdrYzqeVNZvUfT23vYYxXzKYidUcnMtJg/3rxRV63EFZy3k6xfKlmfeJD0176lnUV/Usr3XcwSvFzpg==}
+    engines: {node: '>=20'}
+
   strip-ansi@7.2.0:
     resolution: {integrity: sha512-yDPMNjp4WyfYBkHnjIRLfca1i6KMyGCtsVgoKe/z1+6vukgaENdgGBZt+ZmKPc4gavvEZ5OgHfHdrazhgNyG7w==}
     engines: {node: '>=12'}
@@ -99,40 +103,40 @@ packages:
     resolution: {integrity: sha512-rwu/ClNdSMpkSrUb+d6BRsSkLUq1fmfsY6TOpYzTwvwkg1/NRG85KBy3kq++A8LKQwX6lsu+aWad+2khvuXrqw==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=23}
 
-  yargs@18.0.0:
-    resolution: {integrity: sha512-4UEqdc2RYGHZc7Doyqkrqiln3p9X2DZVxaGbwhn2pi7MrRagKaOcIKe8L3OxYcbhXLgLFUS3zAYuQjKBQgmuNg==}
+  yargs@18.1.0:
+    resolution: {integrity: sha512-2rAgRKu54VsHkqI0/tYkmluGXHD4KW7yZoycuqDQ15QOTnc2VVfy0nN/1eMhnQLO00A+dwtK20xuCnc1YGeUyg==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=23}
 
 snapshots:
 
-  '@manycore/aholo-splat-transform-darwin-arm64@1.7.4':
+  '@manycore/aholo-splat-transform-darwin-arm64@1.7.5':
     optional: true
 
-  '@manycore/aholo-splat-transform-linux-arm64-gnu@1.7.4':
+  '@manycore/aholo-splat-transform-linux-arm64-gnu@1.7.5':
     optional: true
 
-  '@manycore/aholo-splat-transform-linux-x64-gnu@1.7.4':
+  '@manycore/aholo-splat-transform-linux-x64-gnu@1.7.5':
     optional: true
 
-  '@manycore/aholo-splat-transform-win32-arm64-msvc@1.7.4':
+  '@manycore/aholo-splat-transform-win32-arm64-msvc@1.7.5':
     optional: true
 
-  '@manycore/aholo-splat-transform-win32-x64-msvc@1.7.4':
+  '@manycore/aholo-splat-transform-win32-x64-msvc@1.7.5':
     optional: true
 
-  '@manycore/aholo-splat-transform@1.7.4':
+  '@manycore/aholo-splat-transform@1.7.5':
     dependencies:
       fflate: 0.8.3
       tslib: 2.8.1
-      yargs: 18.0.0
+      yargs: 18.1.0
     optionalDependencies:
-      '@manycore/aholo-splat-transform-darwin-arm64': 1.7.4
-      '@manycore/aholo-splat-transform-linux-arm64-gnu': 1.7.4
-      '@manycore/aholo-splat-transform-linux-x64-gnu': 1.7.4
-      '@manycore/aholo-splat-transform-win32-arm64-msvc': 1.7.4
-      '@manycore/aholo-splat-transform-win32-x64-msvc': 1.7.4
+      '@manycore/aholo-splat-transform-darwin-arm64': 1.7.5
+      '@manycore/aholo-splat-transform-linux-arm64-gnu': 1.7.5
+      '@manycore/aholo-splat-transform-linux-x64-gnu': 1.7.5
+      '@manycore/aholo-splat-transform-win32-arm64-msvc': 1.7.5
+      '@manycore/aholo-splat-transform-win32-x64-msvc': 1.7.5
 
-  ansi-regex@6.2.2: {}
+  ansi-regex@6.3.0: {}
 
   ansi-styles@6.2.3: {}
 
@@ -158,9 +162,14 @@ snapshots:
       get-east-asian-width: 1.6.0
       strip-ansi: 7.2.0
 
+  string-width@8.2.2:
+    dependencies:
+      get-east-asian-width: 1.6.0
+      strip-ansi: 7.2.0
+
   strip-ansi@7.2.0:
     dependencies:
-      ansi-regex: 6.2.2
+      ansi-regex: 6.3.0
 
   tslib@2.8.1: {}
 
@@ -174,11 +183,11 @@ snapshots:
 
   yargs-parser@22.0.0: {}
 
-  yargs@18.0.0:
+  yargs@18.1.0:
     dependencies:
       cliui: 9.0.1
       escalade: 3.2.0
       get-caller-file: 2.0.5
-      string-width: 7.2.0
+      string-width: 8.2.2
       y18n: 5.0.8
       yargs-parser: 22.0.0

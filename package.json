@@ -9,12 +9,12 @@
   },
   "license": "ISC",
   "author": "",
-  "packageManager": "pnpm@12.4.1",
+  "packageManager": "pnpm@12.4.2",
   "type": "commonjs",
   "scripts": {
     "verify": "node ci/verify-splat-transform-outputs.cjs"
   },
   "dependencies": {
-    "@manycore/aholo-splat-transform": "1.7.5"
+    "@manycore/aholo-splat-transform": "1.7.7"
   }
 }

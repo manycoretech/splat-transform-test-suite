@@ -9,7 +9,7 @@
   },
   "license": "ISC",
   "author": "",
-  "packageManager": "pnpm@12.4.2",
+  "packageManager": "pnpm@12.6.0",
   "type": "commonjs",
   "scripts": {
     "verify": "node ci/verify-splat-transform-outputs.cjs"

@@ -7,153 +7,153 @@ importers:
     configDependencies: {}
     packageManagerDependencies:
       pnpm:
-        specifier: 12.6.0
-        version: 12.6.0
+        specifier: 12.10.1
+        version: 12.10.1
 
 packages:
 
-  '@pnpm/exe.android-arm64@12.6.0':
-    resolution: {integrity: sha512-kviIHft9h02q+7N2In7tSL9T/HRUSGwYmU74YPtsWU5ee7vgqPyC0JT6RRX6miW+NxX1CvHgQxg69qq1qTLJYQ==}
+  '@pnpm/exe.android-arm64@12.10.1':
+    resolution: {integrity: sha512-CVTlHPwNvadQCJD9bGSMzWIhFX8QpjtqC2c27dhdnn/9iKzEjZ3qL62o3gHpKbIuo6qn4WxTKRoaokgNdReBig==}
     cpu: [arm64]
     os: [android]
 
-  '@pnpm/exe.android-x64@12.6.0':
-    resolution: {integrity: sha512-CT8aJKLq2mtZFE71pr4E5Z2xHL8uGnRGr+NclDqsXlVF4SVcQ2QAs14mWi0C8gjT4hbmi+Q0lJRRIkMAWfjjng==}
+  '@pnpm/exe.android-x64@12.10.1':
+    resolution: {integrity: sha512-NFiYLIaodY7da0XIebwcU3JoP7IK/lzF7zgKSSP+9H+QcFnQ1GDfBkuBKCYJzZ+Xu0WH54neIPLBBCaOjaaauA==}
     cpu: [x64]
     os: [android]
 
-  '@pnpm/exe.darwin-arm64@12.6.0':
-    resolution: {integrity: sha512-rafpVkjzugKBMxSvGQd5wK1x5eOTkD/+lcJIFHeQhvd+BJ8kDisOOvwhQDrpGd4vd2Fx+hhW0P2Ptt638OlhFg==}
+  '@pnpm/exe.darwin-arm64@12.10.1':
+    resolution: {integrity: sha512-0O8tdQ8ijlPJudXspLMTcitMkdBEz6uUflazL5uQE0WMs85oQIp0U+5hfEktMFB64QqEhjqlvvujTwbzdr9oMg==}
     cpu: [arm64]
     os: [darwin]
 
-  '@pnpm/exe.darwin-x64@12.6.0':
-    resolution: {integrity: sha512-72Jpuv1m24gI8zUNcaylYpBWEhBzz1VPhnDIU2GYM2eRP+KsOqVLwV78i+JrihI39zY2NNXmaN4eAKX1inpaDQ==}
+  '@pnpm/exe.darwin-x64@12.10.1':
+    resolution: {integrity: sha512-ud+1/uZOKEo8P/AsPynOJc/LNwfI0j6WwCElibj71rU9l4nIBnsSn+wWTIPZPkZ4BBSH5+82azSnAARMyJ1lNA==}
     cpu: [x64]
     os: [darwin]
 
-  '@pnpm/exe.freebsd-x64@12.6.0':
-    resolution: {integrity: sha512-LON4QgNy1w/XF4uySZIyC/5hEB0oGdelXsY9tSKqstER+2j2X2oHz67skD11RRd/HWFRtMr64shQZ4I9ZoZ0zg==}
+  '@pnpm/exe.freebsd-x64@12.10.1':
+    resolution: {integrity: sha512-mj9PE5rf8uAfQQ2K66HSATMSut+lNiB4eSqFd5+azFVCMnxNSy/32xpZQJT21PhnN3Y4qbK+iKHe5nWAxSuRhw==}
     cpu: [x64]
     os: [freebsd]
 
-  '@pnpm/exe.linux-arm64-musl@12.6.0':
-    resolution: {integrity: sha512-BdDpX+DeaMUc5x6WNcE6FkmFy36NwrBbBvwsZU737Zt3u1fTY+iKFPchjEQNCM4rT6q6xvF2oN3ZwExGsJCkxQ==}
+  '@pnpm/exe.linux-arm64-musl@12.10.1':
+    resolution: {integrity: sha512-xba+00wZJ8Um6rBJJjWl88uJj0tydB8dtomvjlCLvi0uL32vpa9CRP8Vv26FIXvbiZ1bo2RCzYt/eChxJVV52w==}
     cpu: [arm64]
     os: [linux]
     libc: [musl]
 
-  '@pnpm/exe.linux-arm64@12.6.0':
-    resolution: {integrity: sha512-8h2sNoIhHDpHDYqZZCh9PXr6krqW10btb0GHVGuw710muDHlFAHMtUG2ogmaHge6zJG1xgY4Y7mwX5g/LWvrYg==}
+  '@pnpm/exe.linux-arm64@12.10.1':
+    resolution: {integrity: sha512-oBdMp69ScC9UnniG4qZAQVr2fBDSXjm4yk/72vkEVyrlwS23yMxcRQl7Qdo3sgXPAygY6TWnPRKm4rXzjoyW7w==}
     cpu: [arm64]
     os: [linux]
     libc: [glibc]
 
-  '@pnpm/exe.linux-ppc64@12.6.0':
-    resolution: {integrity: sha512-ld6xgcEhFCFrsVsJhbmdmR714PnsEspO/Ij8w0/D7OSiz2hYGu3fZd5tKRxOI5m6H6Gl0/RRFAPncTHbsgXVjQ==}
+  '@pnpm/exe.linux-ppc64@12.10.1':
+    resolution: {integrity: sha512-Yyb3wu09h3c7mLme270uHFiVaAIUHC411Ru9LIU2BKUIstrGlXa9OqqVWoXaRgYRdFdOFknkwG7GNn6ygwLbnw==}
     cpu: [ppc64]
     os: [linux]
     libc: [glibc]
 
-  '@pnpm/exe.linux-riscv64@12.6.0':
-    resolution: {integrity: sha512-HIbImydoC3J8NFt+8MXfhTCf5rO6NjCMyinSAHac0VmV8uCHw+kbQkyAzxV84rzz9ZOzmBOnj0b1N461UIYGsw==}
+  '@pnpm/exe.linux-riscv64@12.10.1':
+    resolution: {integrity: sha512-PdkeUFFkybknnGkWP0H22eMpIiS4OZXL5BcQzF4lh+vmrW3IaC2HOkbANKgot/PKO0Kl77pzA/6PKFxgbgfXIQ==}
     cpu: [riscv64]
     os: [linux]
     libc: [glibc]
 
-  '@pnpm/exe.linux-s390x@12.6.0':
-    resolution: {integrity: sha512-DjSqT7+BZ/lWcDHwNMuzsRVfyxUimh+D54Xw4tSWbdVVQhtWtNMUyI93LVnwCmsoEpar2gC3SFeAgywx37svKQ==}
+  '@pnpm/exe.linux-s390x@12.10.1':
+    resolution: {integrity: sha512-1okKuHKJwJPAbofDxfhZWAUxEWtee4ZSf7Pah8kcvocaJkf2WxFJ5KVTiNIvDml5GLidDQsgf7Pcf/WHbCak7Q==}
     cpu: [s390x]
     os: [linux]
     libc: [glibc]
 
-  '@pnpm/exe.linux-x64-musl@12.6.0':
-    resolution: {integrity: sha512-31lKeGPmRE6xfV6I3VjaEGVFRei14pl/zgoFDK4w+UkbJqOuNl2Ht3O1GuqNIg3Gl14qTEb4kZRAYFHXifDx9A==}
+  '@pnpm/exe.linux-x64-musl@12.10.1':
+    resolution: {integrity: sha512-e6IqzVNkPa7srFKJKnY23uWJ+qz0LaRWiTUo/sHfFXRRMRzB5uNOr6qWWip/jqhdGwU91n9J7LrEYZ6e0tRczw==}
     cpu: [x64]
     os: [linux]
     libc: [musl]
 
-  '@pnpm/exe.linux-x64@12.6.0':
-    resolution: {integrity: sha512-qFWBneHJAJ73W4whtbaFOL1M/7DBC6ILHXuxc7ZPtEhfPuT1zeZiGrmKHoMAfJA+mcm6xhOFljqVTUS+00Jabw==}
+  '@pnpm/exe.linux-x64@12.10.1':
+    resolution: {integrity: sha512-ZByV0DRgWzGaDSjT5ddRBASdwz+r/qPMYh7o6RGmPQjtRGNFbSl94xY2DcAM8mqCOZJUUDtAXQ+wpBXcdpKlkg==}
     cpu: [x64]
     os: [linux]
     libc: [glibc]
 
-  '@pnpm/exe.win32-arm64@12.6.0':
-    resolution: {integrity: sha512-OhfefXEEykZlslSUhR8PPRe6MVPV3Oink/dVfIecE5velpc7j80cZYsHlaDrtRDcm3TPwQHkaRW1SJ1efX9oFg==}
+  '@pnpm/exe.win32-arm64@12.10.1':
+    resolution: {integrity: sha512-I7QZHcjioG7orFeCRUFUHByJ1G0zFPnAlaGGyrUvb6MGkv5oeNwNPl7t+Gp+7zHfnMcgLGJ1a+Wfim0IDw3lOw==}
     cpu: [arm64]
     os: [win32]
 
-  '@pnpm/exe.win32-x64@12.6.0':
-    resolution: {integrity: sha512-L2tuyrD2+Imgxs3VK/ST/2L3xD6vDP0ktJQxM0TaGw7TbAQEMq+RMc8iK6Ew7Id579uzjJe8jSfJID2ZGsOHCA==}
+  '@pnpm/exe.win32-x64@12.10.1':
+    resolution: {integrity: sha512-4WJFdp58EKlCj0zLobrXU0vpszSZIr4X/3y/uNbAQqGW0zE+VdruZB0gFc3L2kzsUzVwTYbaCn+XEhnCYSAlTg==}
     cpu: [x64]
     os: [win32]
 
-  pnpm@12.6.0:
-    resolution: {integrity: sha512-PvaPlRyxEawgS0paFvCy3fDaVqluBBPoHYVdnwtV75JnFHCQKOHNAMQFwsX7e56OxNxGd3yAXQNzwvL/AP0g7A==}
+  pnpm@12.10.1:
+    resolution: {integrity: sha512-ukCjfrGjcNYP6oxM8dNkwTvMzvUY6YrSvO6VT1OdONo3RY5YJho/pV4GUjRQ6g//+fSXsTW+QfLBXBZCusrObA==}
     engines: {node: '>=18.*'}
     hasBin: true
 
 snapshots:
 
-  '@pnpm/exe.android-arm64@12.6.0':
+  '@pnpm/exe.android-arm64@12.10.1':
     optional: true
 
-  '@pnpm/exe.android-x64@12.6.0':
+  '@pnpm/exe.android-x64@12.10.1':
     optional: true
 
-  '@pnpm/exe.darwin-arm64@12.6.0':
+  '@pnpm/exe.darwin-arm64@12.10.1':
     optional: true
 
-  '@pnpm/exe.darwin-x64@12.6.0':
+  '@pnpm/exe.darwin-x64@12.10.1':
     optional: true
 
-  '@pnpm/exe.freebsd-x64@12.6.0':
+  '@pnpm/exe.freebsd-x64@12.10.1':
     optional: true
 
-  '@pnpm/exe.linux-arm64-musl@12.6.0':
+  '@pnpm/exe.linux-arm64-musl@12.10.1':
     optional: true
 
-  '@pnpm/exe.linux-arm64@12.6.0':
+  '@pnpm/exe.linux-arm64@12.10.1':
     optional: true
 
-  '@pnpm/exe.linux-ppc64@12.6.0':
+  '@pnpm/exe.linux-ppc64@12.10.1':
     optional: true
 
-  '@pnpm/exe.linux-riscv64@12.6.0':
+  '@pnpm/exe.linux-riscv64@12.10.1':
     optional: true
 
-  '@pnpm/exe.linux-s390x@12.6.0':
+  '@pnpm/exe.linux-s390x@12.10.1':
     optional: true
 
-  '@pnpm/exe.linux-x64-musl@12.6.0':
+  '@pnpm/exe.linux-x64-musl@12.10.1':
     optional: true
 
-  '@pnpm/exe.linux-x64@12.6.0':
+  '@pnpm/exe.linux-x64@12.10.1':
     optional: true
 
-  '@pnpm/exe.win32-arm64@12.6.0':
+  '@pnpm/exe.win32-arm64@12.10.1':
     optional: true
 
-  '@pnpm/exe.win32-x64@12.6.0':
+  '@pnpm/exe.win32-x64@12.10.1':
     optional: true
 
-  pnpm@12.6.0:
+  pnpm@12.10.1:
     optionalDependencies:
-      '@pnpm/exe.android-arm64': 12.6.0
-      '@pnpm/exe.android-x64': 12.6.0
-      '@pnpm/exe.darwin-arm64': 12.6.0
-      '@pnpm/exe.darwin-x64': 12.6.0
-      '@pnpm/exe.freebsd-x64': 12.6.0
-      '@pnpm/exe.linux-arm64': 12.6.0
-      '@pnpm/exe.linux-arm64-musl': 12.6.0
-      '@pnpm/exe.linux-ppc64': 12.6.0
-      '@pnpm/exe.linux-riscv64': 12.6.0
-      '@pnpm/exe.linux-s390x': 12.6.0
-      '@pnpm/exe.linux-x64': 12.6.0
-      '@pnpm/exe.linux-x64-musl': 12.6.0
-      '@pnpm/exe.win32-arm64': 12.6.0
-      '@pnpm/exe.win32-x64': 12.6.0
+      '@pnpm/exe.android-arm64': 12.10.1
+      '@pnpm/exe.android-x64': 12.10.1
+      '@pnpm/exe.darwin-arm64': 12.10.1
+      '@pnpm/exe.darwin-x64': 12.10.1
+      '@pnpm/exe.freebsd-x64': 12.10.1
+      '@pnpm/exe.linux-arm64': 12.10.1
+      '@pnpm/exe.linux-arm64-musl': 12.10.1
+      '@pnpm/exe.linux-ppc64': 12.10.1
+      '@pnpm/exe.linux-riscv64': 12.10.1
+      '@pnpm/exe.linux-s390x': 12.10.1
+      '@pnpm/exe.linux-x64': 12.10.1
+      '@pnpm/exe.linux-x64-musl': 12.10.1
+      '@pnpm/exe.win32-arm64': 12.10.1
+      '@pnpm/exe.win32-x64': 12.10.1
 
 ---
 lockfileVersion: '9.0'
@@ -167,40 +167,40 @@ importers:
   .:
     dependencies:
       '@manycore/aholo-splat-transform':
-        specifier: 1.7.7
-        version: 1.7.7
+        specifier: 1.8.0
+        version: 1.8.0
 
 packages:
 
-  '@manycore/aholo-splat-transform-darwin-arm64@1.7.7':
-    resolution: {integrity: sha512-5NI14azpdmRfjH2c+UnhQcag2fQD/c7dLO/488VZ/tlPfidtMe1AQOL7nhLVJ6H5IpCiLXneK9lBa5M59RN71A==}
+  '@manycore/aholo-splat-transform-darwin-arm64@1.8.0':
+    resolution: {integrity: sha512-A6aIp09lWvnSclZuB3nqd2FLF8amWMQ1sSxWrz8bQPcZGY/iQh383KXN+26MYI61hSaDfNqpq60wCKtKSv/V5A==}
     cpu: [arm64]
     os: [darwin]
 
-  '@manycore/aholo-splat-transform-linux-arm64-gnu@1.7.7':
-    resolution: {integrity: sha512-4BZsz4fYUyI4NB+dJEgWE+n2As1UXPHGlIy5zx/4sdkZYOzT9xER/jjHeB9KET2lZG0eSrv9y/OtWy/GtsnpsA==}
+  '@manycore/aholo-splat-transform-linux-arm64-gnu@1.8.0':
+    resolution: {integrity: sha512-7nMIngei0RNdoSXcYYE5XFXPTsZHGmgjzoqNrm/FdSpL6lQQUmQVUDiXfgjscr1yO75lPXhlGUc0lNVK1LvQaw==}
     cpu: [arm64]
     os: [linux]
     libc: [glibc]
 
-  '@manycore/aholo-splat-transform-linux-x64-gnu@1.7.7':
-    resolution: {integrity: sha512-P4kJ+6wlvKIR1pq4hVCqz9i/BmNtk0/+ifwrxwa0VNy0EjBJwbQ8eSmiR5j21DoO2ytPIrnf2ZonYX/c+1PzFQ==}
+  '@manycore/aholo-splat-transform-linux-x64-gnu@1.8.0':
+    resolution: {integrity: sha512-dEBzKpmMQfviKvZBa/LH44FOzIjRbP5ZKJeYPaA6vOmOnP8Op36QHLNtjAO1ax7pmdso9KwbSMCv1rgDYzCpoQ==}
     cpu: [x64]
     os: [linux]
     libc: [glibc]
 
-  '@manycore/aholo-splat-transform-win32-arm64-msvc@1.7.7':
-    resolution: {integrity: sha512-MUmm1I9tFurZv0DQ6cKUTGTdgxAmicgaYV6L8m+whz5ZawsYda6GpzV1YHhNZW1nCUO82m52DOVEBxCJumgQOA==}
+  '@manycore/aholo-splat-transform-win32-arm64-msvc@1.8.0':
+    resolution: {integrity: sha512-Pso+ENOXmLapO+AhDX8UaMwphE9Yab3cW9GltDSIsCGl+Rfk3aCEFh8gQKadxtHp6LKayBO157EtQYSziaO0wg==}
     cpu: [arm64]
     os: [win32]
 
-  '@manycore/aholo-splat-transform-win32-x64-msvc@1.7.7':
-    resolution: {integrity: sha512-a2LCQ0/J7xrqz/85JKryJI1lU7k7TXYOdKG2bIo8AsP48NNvOKbLE5l9xF7xAe0lYf6p4SwFafKumi7osh0dOg==}
+  '@manycore/aholo-splat-transform-win32-x64-msvc@1.8.0':
+    resolution: {integrity: sha512-yC/J53JxNREiqPFDBhnss7hEUCk/OUgNP44AwH0NkpdXkCa+O2sqJw5lGbGkEhSOui26A9f9wKTlHCB4HMJT3g==}
     cpu: [x64]
     os: [win32]
 
-  '@manycore/aholo-splat-transform@1.7.7':
-    resolution: {integrity: sha512-kPAPF61bJ3M6xK8gXvb4b1Ju+ghwZI16JJJ5NwVavqPRQBDUqRFWjLQ3TAnRQrSsBr5GWcXVDrQSrBLfLxWEtg==}
+  '@manycore/aholo-splat-transform@1.8.0':
+    resolution: {integrity: sha512-CwnWtwdalYBZJNGKPLNpqPc376nG7YW/wWJnhJUluYh01g9O8mYAoCP0zoj8uavNgq49spGXWSO7G8RqRquNtA==}
     engines: {node: '>= 22.22.1'}
     hasBin: true
 
@@ -261,38 +261,38 @@ packages:
     resolution: {integrity: sha512-rwu/ClNdSMpkSrUb+d6BRsSkLUq1fmfsY6TOpYzTwvwkg1/NRG85KBy3kq++A8LKQwX6lsu+aWad+2khvuXrqw==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=23}
 
-  yargs@18.1.0:
-    resolution: {integrity: sha512-2rAgRKu54VsHkqI0/tYkmluGXHD4KW7yZoycuqDQ15QOTnc2VVfy0nN/1eMhnQLO00A+dwtK20xuCnc1YGeUyg==}
+  yargs@18.2.0:
+    resolution: {integrity: sha512-9OpKOLeaoNFecEp7P6iYbzze/5CqWoH7N3SMs/6y1XF4nMvFMspEGZzJ6uFi9MmQwXhyzqYoSEKO3tvA3Z/o2w==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=23}
 
 snapshots:
 
-  '@manycore/aholo-splat-transform-darwin-arm64@1.7.7':
+  '@manycore/aholo-splat-transform-darwin-arm64@1.8.0':
     optional: true
 
-  '@manycore/aholo-splat-transform-linux-arm64-gnu@1.7.7':
+  '@manycore/aholo-splat-transform-linux-arm64-gnu@1.8.0':
     optional: true
 
-  '@manycore/aholo-splat-transform-linux-x64-gnu@1.7.7':
+  '@manycore/aholo-splat-transform-linux-x64-gnu@1.8.0':
     optional: true
 
-  '@manycore/aholo-splat-transform-win32-arm64-msvc@1.7.7':
+  '@manycore/aholo-splat-transform-win32-arm64-msvc@1.8.0':
     optional: true
 
-  '@manycore/aholo-splat-transform-win32-x64-msvc@1.7.7':
+  '@manycore/aholo-splat-transform-win32-x64-msvc@1.8.0':
     optional: true
 
-  '@manycore/aholo-splat-transform@1.7.7':
+  '@manycore/aholo-splat-transform@1.8.0':
     dependencies:
       fflate: 0.8.3
       tslib: 2.8.1
-      yargs: 18.1.0
+      yargs: 18.2.0
     optionalDependencies:
-      '@manycore/aholo-splat-transform-darwin-arm64': 1.7.7
-      '@manycore/aholo-splat-transform-linux-arm64-gnu': 1.7.7
-      '@manycore/aholo-splat-transform-linux-x64-gnu': 1.7.7
-      '@manycore/aholo-splat-transform-win32-arm64-msvc': 1.7.7
-      '@manycore/aholo-splat-transform-win32-x64-msvc': 1.7.7
+      '@manycore/aholo-splat-transform-darwin-arm64': 1.8.0
+      '@manycore/aholo-splat-transform-linux-arm64-gnu': 1.8.0
+      '@manycore/aholo-splat-transform-linux-x64-gnu': 1.8.0
+      '@manycore/aholo-splat-transform-win32-arm64-msvc': 1.8.0
+      '@manycore/aholo-splat-transform-win32-x64-msvc': 1.8.0
 
   ansi-regex@6.3.0: {}
 
@@ -341,7 +341,7 @@ snapshots:
 
   yargs-parser@22.0.0: {}
 
-  yargs@18.1.0:
+  yargs@18.2.0:
     dependencies:
       cliui: 9.0.1
       escalade: 3.2.0

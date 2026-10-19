@@ -102,6 +102,17 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
+      - name: Install Vulkan runtime (macOS)
+        if: runner.os == 'macOS'
+        shell: bash
+        run: |
+          brew install vulkan-loader molten-vk vulkan-tools
+          export VK_DRIVER_FILES="$(brew --prefix molten-vk)/etc/vulkan/icd.d/MoltenVK_icd.json"
+          test -s "$(brew --prefix)/lib/libvulkan.dylib"
+          test -s "$VK_DRIVER_FILES"
+          echo "VK_DRIVER_FILES=$VK_DRIVER_FILES" >> "$GITHUB_ENV"
+          vulkaninfo --summary
+
       - name: Download encrypted data artifact
         uses: actions/download-artifact@v7
         with:

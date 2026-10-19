@@ -21,6 +21,22 @@ Each conversion must exit successfully before verifying or updating baselines.
 `pnpm test` exercises the verifier without requiring the input datasets or native
 executable. CI runs these tests on every platform in its matrix.
 
+## macOS Vulkan runtime
+
+The 2.x native executable requires an external Vulkan loader and MoltenVK for
+`splat-transform list:gpu` and GPU operations. Install and check the runtime on
+Apple silicon macOS before running the suite:
+
+```sh
+brew install vulkan-loader molten-vk vulkan-tools
+export VK_DRIVER_FILES="$(brew --prefix molten-vk)/etc/vulkan/icd.d/MoltenVK_icd.json"
+vulkaninfo --summary
+```
+
+CI performs this setup in its macOS job and preserves `VK_DRIVER_FILES` for later
+steps. The driver manifest uses Homebrew's `etc/vulkan/icd.d` location. The native
+executable can locate the loader in Homebrew's default `/opt/homebrew/lib` directory.
+
 ## Baselines and tolerances
 
 The baselines in `ci/baselines` were regenerated with

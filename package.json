@@ -12,6 +12,7 @@
   "packageManager": "pnpm@12.11.2",
   "type": "commonjs",
   "scripts": {
+    "test": "node --test ci/verify-splat-transform-outputs.test.cjs",
     "verify": "node ci/verify-splat-transform-outputs.cjs"
   },
   "dependencies": {

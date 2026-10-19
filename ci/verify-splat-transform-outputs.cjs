@@ -7,6 +7,9 @@ const BASELINE_DIR = resolveWorkspacePath(process.env.SPLAT_TEST_BASELINE_DIR ||
 
 const QUANTITY_RELATIVE_TOLERANCE = 0.01;
 const QUANTITY_ABSOLUTE_TOLERANCE = 1;
+// Native float arithmetic can differ slightly between platforms, especially after SOG decoding.
+const BOUNDS_RELATIVE_TOLERANCE = 1e-6;
+const BOUNDS_ABSOLUTE_TOLERANCE = 1e-6;
 
 const TESTS = [
   {
@@ -107,13 +110,14 @@ function assertWithinTolerance(
   actual,
   expected,
   absoluteTolerance = QUANTITY_ABSOLUTE_TOLERANCE,
+  relativeTolerance = QUANTITY_RELATIVE_TOLERANCE,
 ) {
   if (!Number.isFinite(actual) || !Number.isFinite(expected)) {
     throw new Error(`${label} should contain finite numbers: expected ${expected}, got ${actual}`);
   }
 
   const delta = Math.abs(actual - expected);
-  const allowed = Math.max(absoluteTolerance, Math.abs(expected) * QUANTITY_RELATIVE_TOLERANCE);
+  const allowed = Math.max(absoluteTolerance, Math.abs(expected) * relativeTolerance);
   const roundingEpsilon = Number.EPSILON * Math.max(1, Math.abs(actual), Math.abs(expected)) * 4;
 
   if (delta - allowed > roundingEpsilon) {
@@ -163,8 +167,20 @@ function assertDeepEqual(label, actual, expected, jsonPath = '$', leafComparator
 
 function assertLodMetaMatchesBaseline(label, actual, expected) {
   const lodQuantityPath = /^\$\.tree\[\d+\]\.lods\[\d+\]\.(count|offset)$/;
+  const boundsPath = /^\$\.(?:forwardBox|tree\[\d+\]\.bound)\.(?:min|max)\[[0-2]\]$/;
 
   assertDeepEqual(label, actual, expected, '$', (leafLabel, actualValue, expectedValue, jsonPath) => {
+    if (boundsPath.test(jsonPath)) {
+      assertWithinTolerance(
+        `${leafLabel} coordinate at ${jsonPath}`,
+        actualValue,
+        expectedValue,
+        BOUNDS_ABSOLUTE_TOLERANCE,
+        BOUNDS_RELATIVE_TOLERANCE,
+      );
+      return true;
+    }
+
     const match = jsonPath.match(lodQuantityPath);
 
     if (!match || (match[1] === 'offset' && expectedValue === 0)) {
@@ -223,10 +239,26 @@ function validateLodMetaRanges(label, meta) {
   }
 }
 
+function validateBounds(label, bounds) {
+  for (const side of ['min', 'max']) {
+    if (!Array.isArray(bounds?.[side]) || bounds[side].length !== 3
+      || !bounds[side].every(Number.isFinite)) {
+      throw new Error(`${label}.${side} should contain three finite coordinates.`);
+    }
+  }
+
+  for (let axis = 0; axis < 3; axis += 1) {
+    if (bounds.min[axis] > bounds.max[axis]) {
+      throw new Error(`${label} has inverted bounds on axis ${axis}.`);
+    }
+  }
+}
+
 function validateLodMeta(label, outputDir, meta) {
   assertEqual(`${label} meta magicCode`, meta.magicCode, 2500660);
   assertEqual(`${label} meta type`, meta.type, 'lod-splat');
   assertEqual(`${label} meta version`, meta.version, '1.0');
+  validateBounds(`${label} meta forwardBox`, meta.forwardBox);
 
   if (!Array.isArray(meta.files)) {
     throw new Error(`${label} meta files should be an array.`);
@@ -245,6 +277,8 @@ function validateLodMeta(label, outputDir, meta) {
   }
 
   for (const [blockIndex, block] of meta.tree.entries()) {
+    validateBounds(`${label} meta tree[${blockIndex}].bound`, block.bound);
+
     if (!Array.isArray(block.lods)) {
       throw new Error(`${label} meta tree[${blockIndex}].lods should be an array.`);
     }
@@ -510,5 +544,6 @@ module.exports = {
   assertLodMetaMatchesBaseline,
   assertNormalizedLogMatchesBaseline,
   normalizeLog,
+  validateLodMeta,
   validateLodMetaRanges,
 };

@@ -142,6 +142,9 @@ jobs:
             throw 'bear.sog artifact is empty.'
           }
 
+      - name: Test output verifier
+        run: node --test ci/verify-splat-transform-outputs.test.cjs
+
       - name: Test
         if: runner.os != 'Linux'
         run: |

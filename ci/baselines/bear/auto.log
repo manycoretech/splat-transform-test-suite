@@ -2,13 +2,13 @@
 [Task:Read#0]   - ./data/bear.sog
 [Task:Read#0] counts: 970948, SH: 3
 [Task:Read#0] stored -> "cache0"
-[Task:Read#0] elapsed time: 328.632ms
+[Task:Read#0] elapsed time: 526.632ms
 [Task:AutoLod#1] loaded -> "cache0"
 [Task:AutoLod#1] expected -> 291285(30.00%) | ratio=0.3 counts=Infinity
-[Task:AutoLod#1] result -> 291278(100.00%)
+[Task:AutoLod#1] result -> 291279(100.00%)
 [Task:AutoLod#1] stored -> key="cache0"
-[Task:AutoLod#1] elapsed time: 2.031s
-[Task:Write#2] writing splat -> file="./out/bear.spz" count=291278 SH=3
+[Task:AutoLod#1] elapsed time: 1.373s
+[Task:Write#2] writing splat -> file="./out/bear.spz" count=291279 SH=3
 [Task:Write#2] writing done
-[Task:Write#2] elapsed time: 767.671ms
-Total elapsed time: 3.128s
+[Task:Write#2] elapsed time: 135.844ms
+Total elapsed time: 2.058s

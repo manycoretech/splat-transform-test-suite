@@ -2,35 +2,35 @@
 [Task:Read#0]   - ./data/bear.sog
 [Task:Read#0] counts: 970948, SH: 3
 [Task:Read#0] stored -> "cache0"
-[Task:Read#0] elapsed time: 318.24ms
+[Task:Read#0] elapsed time: 519.095ms
 [Task:AutoChunkLod#1] loaded -> "cache0"
 [Task:AutoChunkLod#1] generate lod
-[Task:AutoChunkLod#1] generate elapsed: 5.808s
+[Task:AutoChunkLod#1] generate elapsed: 4.533s
 [Task:AutoChunkLod#1] Total blocks: 4, files: 14
 [Task:AutoChunkLod#1] Gaussian per level: 
 [Task:AutoChunkLod#1] 	Level 0(100.00%): 970948(100.00%)
-[Task:AutoChunkLod#1] 	Level 1 (50.00%): 485472 (50.00%)
+[Task:AutoChunkLod#1] 	Level 1 (50.00%): 485473 (50.00%)
 [Task:AutoChunkLod#1] 	Level 2 (25.00%): 242736 (25.00%)
-[Task:AutoChunkLod#1] 	Level 3  (5.00%):  48546  (5.00%)
-[Task:AutoChunkLod#1] 	Level 4  (1.00%):   9707  (1.00%)
-[Task:AutoChunkLod#1] elapsed time: 5.848s
+[Task:AutoChunkLod#1] 	Level 3  (5.00%):  48545  (5.00%)
+[Task:AutoChunkLod#1] 	Level 4  (1.00%):   9708  (1.00%)
+[Task:AutoChunkLod#1] elapsed time: 4.550s
 [Task:Write#2] exist dir ./out/bear, removed
 [Task:Write#2] writing bundle -> dir="./out/bear" files=15
-[Task:Write#2] - out\bear\lod-meta.json (1/15)
-[Task:Write#2] - out\bear\chunk_0.spz (2/15)
-[Task:Write#2] - out\bear\chunk_1.spz (3/15)
-[Task:Write#2] - out\bear\chunk_2.spz (4/15)
-[Task:Write#2] - out\bear\chunk_3.spz (5/15)
-[Task:Write#2] - out\bear\chunk_4.spz (6/15)
-[Task:Write#2] - out\bear\chunk_5.spz (7/15)
-[Task:Write#2] - out\bear\chunk_6.spz (8/15)
-[Task:Write#2] - out\bear\chunk_7.spz (9/15)
-[Task:Write#2] - out\bear\chunk_8.spz (10/15)
-[Task:Write#2] - out\bear\chunk_9.spz (11/15)
-[Task:Write#2] - out\bear\chunk_10.spz (12/15)
-[Task:Write#2] - out\bear\chunk_11.spz (13/15)
-[Task:Write#2] - out\bear\chunk_12.spz (14/15)
-[Task:Write#2] - out\bear\chunk_13.spz (15/15)
+[Task:Write#2] - out/bear/lod-meta.json (1/15)
+[Task:Write#2] - out/bear/chunk_0.spz (2/15)
+[Task:Write#2] - out/bear/chunk_1.spz (3/15)
+[Task:Write#2] - out/bear/chunk_2.spz (4/15)
+[Task:Write#2] - out/bear/chunk_3.spz (5/15)
+[Task:Write#2] - out/bear/chunk_4.spz (6/15)
+[Task:Write#2] - out/bear/chunk_5.spz (7/15)
+[Task:Write#2] - out/bear/chunk_6.spz (8/15)
+[Task:Write#2] - out/bear/chunk_7.spz (9/15)
+[Task:Write#2] - out/bear/chunk_8.spz (10/15)
+[Task:Write#2] - out/bear/chunk_9.spz (11/15)
+[Task:Write#2] - out/bear/chunk_10.spz (12/15)
+[Task:Write#2] - out/bear/chunk_11.spz (13/15)
+[Task:Write#2] - out/bear/chunk_12.spz (14/15)
+[Task:Write#2] - out/bear/chunk_13.spz (15/15)
 [Task:Write#2] writing bundle done -> dir="./out/bear" files=15
-[Task:Write#2] elapsed time: 1.107s
-Total elapsed time: 7.274s
+[Task:Write#2] elapsed time: 393.196ms
+Total elapsed time: 5.528s

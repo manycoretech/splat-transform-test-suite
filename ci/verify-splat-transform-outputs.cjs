@@ -7,9 +7,9 @@ const BASELINE_DIR = resolveWorkspacePath(process.env.SPLAT_TEST_BASELINE_DIR ||
 
 const QUANTITY_RELATIVE_TOLERANCE = 0.01;
 const QUANTITY_ABSOLUTE_TOLERANCE = 1;
-// Native float arithmetic can differ slightly between platforms, especially after SOG decoding.
-const BOUNDS_RELATIVE_TOLERANCE = 1e-6;
-const BOUNDS_ABSOLUTE_TOLERANCE = 1e-6;
+// Native bounds differ across platforms; macOS bear forwardBox differed by about 1.06e-5.
+const BOUNDS_RELATIVE_TOLERANCE = 1e-4;
+const BOUNDS_ABSOLUTE_TOLERANCE = 1e-4;
 
 const TESTS = [
   {

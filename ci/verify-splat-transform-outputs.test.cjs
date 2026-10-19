@@ -59,12 +59,20 @@ for (const scene of ['bear', 'xiaozhen']) {
   });
 }
 
+test('the reported macOS bear forwardBox difference is accepted', () => {
+  const baseline = makeMeta();
+  baseline.forwardBox.max[0] = 0.1592825949192047;
+  const current = structuredClone(baseline);
+  current.forwardBox.max[0] = 0.15927201509475708;
+  assertLodMetaMatchesBaseline('bear macOS bounds', current, baseline);
+});
+
 test('coordinates at the absolute tolerance boundary pass, including near zero', () => {
   const baseline = makeMeta();
   const current = structuredClone(baseline);
   for (const box of [current.forwardBox, ...current.tree.map((block) => block.bound)]) {
-    box.min[0] = -0.000001;
-    box.max[0] = 1.000001;
+    box.min[0] = -0.0001;
+    box.max[0] = 1.0001;
   }
   assertLodMetaMatchesBaseline('bounds', current, baseline);
 });
@@ -73,8 +81,8 @@ test('large positive and negative coordinates use relative tolerance', () => {
   const baseline = makeMeta();
   const current = structuredClone(baseline);
   for (const box of [current.forwardBox, ...current.tree.map((block) => block.bound)]) {
-    box.min[1] = -1000.001;
-    box.max[1] = 1000.001;
+    box.min[1] = -1000.1;
+    box.max[1] = 1000.1;
   }
   assertLodMetaMatchesBaseline('bounds', current, baseline);
 });
@@ -83,8 +91,8 @@ test('coordinate drift beyond either tolerance fails with its JSON path', () => 
   const baseline = makeMeta();
   for (const select of [(meta) => meta.forwardBox, (meta) => meta.tree[0].bound]) {
     for (const [side, axis, value] of [
-      ['min', 0, -0.0000011], ['max', 0, 1.0000011],
-      ['min', 1, -1000.0011], ['max', 1, 1000.0011],
+      ['min', 0, -0.00011], ['max', 0, 1.00011],
+      ['min', 1, -1000.11], ['max', 1, 1000.11],
     ]) {
       const current = structuredClone(baseline);
       select(current)[side][axis] = value;

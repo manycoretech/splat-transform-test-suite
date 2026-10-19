@@ -51,11 +51,13 @@ Numeric comparisons use
 | Values | Absolute tolerance | Relative tolerance |
 | --- | --- | --- |
 | Generated point counts and nonzero LOD offsets | 1 point | 1% |
-| `forwardBox` and `tree[].bound` min/max coordinates | `1e-6` | `1e-6` (0.0001%) |
+| `forwardBox` and `tree[].bound` min/max coordinates | `1e-4` | `1e-4` (0.01%) |
 
 Coordinate tolerance accommodates native floating-point differences across
-platforms, including coordinates near zero. Boxes must still contain three finite
-coordinates per side, with `min <= max` on each axis.
+platforms, including coordinates near zero. macOS CI reported a `bear` forward-box
+coordinate difference of approximately `1.06e-5`, exceeding the previous `1e-6`
+tolerance; this case is covered by a regression test. Boxes must still contain
+three finite coordinates per side, with `min <= max` on each axis.
 
 Metadata structure, input counts, SH degree, levels, file names and indices,
 permanent-file selection, and zero offsets remain exact. Chunk ranges must be

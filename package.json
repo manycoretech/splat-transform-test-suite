@@ -16,6 +16,6 @@
     "verify": "node ci/verify-splat-transform-outputs.cjs"
   },
   "dependencies": {
-    "@manycore/aholo-splat-transform": "2.0.1"
+    "@manycore/aholo-splat-transform": "2.0.2"
   }
 }

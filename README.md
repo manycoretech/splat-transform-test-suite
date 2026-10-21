@@ -60,9 +60,12 @@ tolerance; this case is covered by a regression test. Boxes must still contain
 three finite coordinates per side, with `min <= max` on each axis.
 
 Metadata structure, input counts, SH degree, levels, file names and indices,
-permanent-file selection, and zero offsets remain exact. Chunk ranges must be
-contiguous; log counts must match metadata sums exactly. Rounded log percentages
-must agree with their counts. Timings and directory prefixes are ignored.
+permanent-file membership, and zero offsets remain exact. `permanentFiles` is
+compared without regard to order; missing, added, or duplicate members still fail.
+Other arrays, including `files`, `tree`, and `lods`, remain order-sensitive.
+Chunk ranges must be contiguous; log counts must match metadata sums exactly.
+Rounded log percentages must agree with their counts. Timings and directory
+prefixes are ignored.
 
 After a dependency upgrade, run all four conversions above and review the output
 changes. Replace these six baseline files from the successful run:

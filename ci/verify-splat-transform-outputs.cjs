@@ -165,11 +165,25 @@ function assertDeepEqual(label, actual, expected, jsonPath = '$', leafComparator
   }
 }
 
+function normalizeLodMeta(meta) {
+  if (!Array.isArray(meta?.permanentFiles)) {
+    return meta;
+  }
+
+  // Permanent file membership is unordered; preserve duplicates for comparison.
+  return {
+    ...meta,
+    permanentFiles: [...meta.permanentFiles].sort((left, right) => left - right),
+  };
+}
+
 function assertLodMetaMatchesBaseline(label, actual, expected) {
   const lodQuantityPath = /^\$\.tree\[\d+\]\.lods\[\d+\]\.(count|offset)$/;
   const boundsPath = /^\$\.(?:forwardBox|tree\[\d+\]\.bound)\.(?:min|max)\[[0-2]\]$/;
+  const current = normalizeLodMeta(actual);
+  const baseline = normalizeLodMeta(expected);
 
-  assertDeepEqual(label, actual, expected, '$', (leafLabel, actualValue, expectedValue, jsonPath) => {
+  assertDeepEqual(label, current, baseline, '$', (leafLabel, actualValue, expectedValue, jsonPath) => {
     if (boundsPath.test(jsonPath)) {
       assertWithinTolerance(
         `${leafLabel} coordinate at ${jsonPath}`,

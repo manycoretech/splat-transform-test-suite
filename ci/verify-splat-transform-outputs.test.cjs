@@ -57,7 +57,56 @@ for (const scene of ['bear', 'xiaozhen']) {
       }
     }
   });
+
+  test(`${scene} permanentFiles comparison ignores order without mutating metadata`, () => {
+    const baselineDir = path.join(__dirname, 'baselines', scene);
+    const baseline = JSON.parse(fs.readFileSync(path.join(baselineDir, 'lod-meta.json'), 'utf8'));
+    const current = structuredClone(baseline);
+    current.permanentFiles.reverse();
+    const originalBaseline = structuredClone(baseline);
+    const originalCurrent = structuredClone(current);
+
+    assertLodMetaMatchesBaseline(scene, current, baseline);
+    assertLodMetaMatchesBaseline(scene, baseline, current);
+    assert.deepEqual(current, originalCurrent);
+    assert.deepEqual(baseline, originalBaseline);
+  });
 }
+
+test('permanentFiles comparison rejects missing, added, changed and duplicate members', () => {
+  const baseline = makeMeta();
+  baseline.permanentFiles = [0, 1];
+  for (const permanentFiles of [[0], [0, 1, 2], [0, 2], [1, 1], [1, 0, 1]]) {
+    const current = { ...baseline, permanentFiles };
+    assert.throws(() => assertLodMetaMatchesBaseline('permanent files', current, baseline), /permanentFiles/);
+  }
+});
+
+test('permanentFiles comparison rejects missing fields, malformed arrays and invalid indices', () => {
+  const baseline = makeMeta();
+  baseline.permanentFiles = [0, 1];
+  for (const permanentFiles of [undefined, null, {}, '0,1', [1, '0'], [1, -1], [1, 0.5], [1, Infinity], [1, NaN]]) {
+    const current = { ...baseline, permanentFiles };
+    assert.throws(() => assertLodMetaMatchesBaseline('permanent files', current, baseline), /permanentFiles/);
+  }
+  const current = structuredClone(baseline);
+  delete current.permanentFiles;
+  assert.throws(() => assertLodMetaMatchesBaseline('permanent files', current, baseline), /object keys/);
+});
+
+test('file lists, trees, LOD levels and coordinate arrays remain order-sensitive', () => {
+  const baseline = makeMeta();
+  for (const change of [
+    (meta) => { meta.files.reverse(); },
+    (meta) => { meta.tree.reverse(); },
+    (meta) => { meta.tree[0].lods.reverse(); },
+    (meta) => { meta.forwardBox.min.reverse(); },
+  ]) {
+    const current = structuredClone(baseline);
+    change(current);
+    assert.throws(() => assertLodMetaMatchesBaseline('ordered arrays', current, baseline));
+  }
+});
 
 test('the reported macOS bear forwardBox difference is accepted', () => {
   const baseline = makeMeta();

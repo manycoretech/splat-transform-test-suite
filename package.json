@@ -9,13 +9,13 @@
   },
   "license": "ISC",
   "author": "",
-  "packageManager": "pnpm@12.11.2",
+  "packageManager": "pnpm@12.14.0",
   "type": "commonjs",
   "scripts": {
     "test": "node --test ci/verify-splat-transform-outputs.test.cjs",
     "verify": "node ci/verify-splat-transform-outputs.cjs"
   },
   "dependencies": {
-    "@manycore/aholo-splat-transform": "2.0.2"
+    "@manycore/aholo-splat-transform": "2.1.0"
   }
 }

@@ -68,10 +68,10 @@ jobs:
       matrix:
         include:
           - target: win32-x64-msvc
-            os: windows-2025-vs2026
+            os: windows-latest
             shell: pwsh
           - target: win32-arm64-msvc
-            os: windows-11-vs2026-arm
+            os: windows-11-arm
             shell: pwsh
           - target: linux-x64-gnu
             os: ubuntu-26.04
@@ -80,7 +80,7 @@ jobs:
             os: ubuntu-26.04-arm
             shell: bash
           - target: darwin-arm64
-            os: macos-26
+            os: macos-latest
             shell: bash
     defaults:
       run:
